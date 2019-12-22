@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_130307) do
+ActiveRecord::Schema.define(version: 2019_12_20_161928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.integer "sender_id", null: false
+    t.integer "recipient_id", null: false
+    t.float "amount", default: 0.0, null: false
+    t.string "status", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bill_requests", force: :cascade do |t|
     t.integer "manager_id"
@@ -73,15 +82,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_130307) do
     t.string "encrypted_password", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "transactions", force: :cascade do |t|
-    t.integer "sender_id", null: false
-    t.integer "recipient_id", null: false
-    t.float "amount", default: 0.0, null: false
-    t.string "status", default: "", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "salt"
   end
 
   create_table "users", force: :cascade do |t|
