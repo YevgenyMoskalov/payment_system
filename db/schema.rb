@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_20_161928) do
+ActiveRecord::Schema.define(version: 2019_12_25_104456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_161928) do
   end
 
   create_table "bills", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "client_id"
     t.string "bills_type", default: "", null: false
     t.float "amount", default: 0.0, null: false
     t.float "percent", default: 0.0, null: false
@@ -58,10 +58,35 @@ ActiveRecord::Schema.define(version: 2019_12_20_161928) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "client_attrs", force: :cascade do |t|
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.date "birthday", null: false
+    t.string "gender", default: "", null: false
+    t.integer "city_id"
+    t.integer "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "countries", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "short_code", default: "", null: false
     t.string "phone_code", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "manager_attrs", force: :cascade do |t|
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "nickname", default: "", null: false
+    t.integer "manager_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -75,11 +100,6 @@ ActiveRecord::Schema.define(version: 2019_12_20_161928) do
   end
 
   create_table "managers", force: :cascade do |t|
-    t.string "first_name", default: "", null: false
-    t.string "last_name", default: "", null: false
-    t.string "nickname", default: "", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "salt"
@@ -88,11 +108,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_161928) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "first_name", default: "", null: false
-    t.string "last_name", default: "", null: false
-    t.date "birthday", null: false
-    t.string "gender", default: "", null: false
-    t.integer "city_id"
+    t.string "user_type"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

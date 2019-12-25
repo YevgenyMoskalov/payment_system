@@ -1,7 +1,7 @@
 class CreateBills < ActiveRecord::Migration[5.2]
   def change
     create_table :bills do |t|
-      t.integer     :user_id
+      t.integer     :client_id
       t.string      :bills_type,      null: false, default: ''
       t.float       :amount,          null: false, default: 0
       t.float       :percent,         null: false, default: 0
