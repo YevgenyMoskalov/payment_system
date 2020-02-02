@@ -21,6 +21,31 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <%= f.fields_for :client_attr, resource.client_attr ? resource.client_attr : resource.build_client_attr do |at| %>
+    <div class="field">
+      <%= at.label :first_name %><br />
+      <%= at.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+    </div>
+
+    <div class="field">
+      <%= at.label :last_name %><br />
+      <%= at.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+    </div>
+
+    <div class="field">
+      <%= at.label :birthday %><br />
+      <%= at.date_field :birthday, autofocus: true, autocomplete: "birthday" %>
+    </div>
+
+    <div class="field">
+      <%= at.radio_button :gender, 'Male' %>
+      <%= at.label :gender, 'Male', value: 'Male' %>
+      <%= at.radio_button :gender, 'Female' %>
+      <%= at.label :gender, 'Female', value: 'Female' %>
+    </div>
+
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
