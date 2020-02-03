@@ -5,12 +5,12 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def render_403
-    render file: "public/403.html", status: 403
-  end
+  # rescue_from CanCan::AccessDenied do
+  #   redirect_to '/403.html'
+  # end
 
-  def render_404
-    render file: "public/404.html", status: 404
+  rescue_from ActiveRecord::RecordNotFound do
+    redirect_to '/404.html'
   end
 
   def configure_permitted_parameters

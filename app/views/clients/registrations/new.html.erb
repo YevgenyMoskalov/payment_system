@@ -20,7 +20,7 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
+<!--  вложенные атребуты-->
   <%= f.fields_for :client_attr, resource.client_attr ? resource.client_attr : resource.build_client_attr do |at| %>
     <div class="field">
       <%= at.label :first_name %><br />
@@ -45,6 +45,8 @@
     </div>
 
   <% end %>
+<!--  капча-->
+  <%= raw recaptcha_tags %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

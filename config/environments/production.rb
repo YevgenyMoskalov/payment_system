@@ -91,4 +91,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  RECAPTCHA_SITE_KEY   = '6LddQNUUAAAAAOzRAvBRgAe-NWk7cB0jfkQN_qV_'
+  RECAPTCHA_SECRET_KEY = '6LddQNUUAAAAADI_efcgaKjDzMuSMAOgK1ngMi2h'
 end
