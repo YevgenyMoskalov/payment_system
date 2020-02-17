@@ -1,3 +1,7 @@
-// Place all the styles related to the account controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body::before {
+  content: '';
+  position: fixed;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  background: url("bank-system-registration.jpg") center / cover no-repeat;
+}
