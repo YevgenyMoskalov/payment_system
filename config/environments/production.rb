@@ -94,4 +94,7 @@ Rails.application.configure do
 
   RECAPTCHA_SITE_KEY   = '6LddQNUUAAAAAOzRAvBRgAe-NWk7cB0jfkQN_qV_'
   RECAPTCHA_SECRET_KEY = '6LddQNUUAAAAADI_efcgaKjDzMuSMAOgK1ngMi2h'
+
+  config.assets.compile = true
+
 end
