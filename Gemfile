@@ -67,6 +67,6 @@ gem 'devise'
 
 gem 'dotenv-rails'
 
-gem 'recaptcha'
+gem 'recaptcha', require: 'recaptcha/rails'
 
 gem 'bootstrap'

@@ -59,6 +59,6 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  ENV_RECAPTCHA_PUBLIC_KEY  = '6LddQNUUAAAAAOzRAvBRgAe-NWk7cB0jfkQN_qV_'
-  ENV_RECAPTCHA_PRIVATE_KEY = '6LddQNUUAAAAADI_efcgaKjDzMuSMAOgK1ngMi2h'
+  RECAPTCHA_SITE_KEY   = '6LctwNoUAAAAAAwhiiQLzjcR0qRTskyz6XwML7Tv'
+  RECAPTCHA_SECRET_KEY = '6LctwNoUAAAAAD4W97FBS6FyZfi_eeoSwK3hNn42'
 end
