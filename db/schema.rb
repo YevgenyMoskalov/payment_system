@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_121547) do
+ActiveRecord::Schema.define(version: 2020_02_28_170502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_02_26_121547) do
   end
 
   create_table "bills", force: :cascade do |t|
-    t.integer "client_id"
+    t.integer "client_attr_id"
     t.string "bills_type", default: "", null: false
     t.float "amount", default: 0.0, null: false
     t.float "percent", default: 0.0, null: false
