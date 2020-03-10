@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   match '/500', to: 'errors#internal_server_error', via: :all
 
   get 'account/index'
-  # :omniauth_callbacks => "users/omniauth_callbacks"
+  get 'account/new_credit' => 'account#new_credit', :as => :new_credit_modal
+  get 'account/new_deposit' => 'account#new_deposit', :as => :new_deposit_modal
+
 
   devise_for :clients, controllers: { sessions: 'client/sessions', registrations: 'clients/registrations' }
   devise_for :users,   controllers: { sessions: 'users/sessions' }

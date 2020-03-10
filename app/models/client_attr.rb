@@ -10,7 +10,7 @@ class ClientAttr < ApplicationRecord
   private
 
   def create_bill
-    attr_id = self.id
-    Bill.create!(client_attr_id: :attr_id, bills_type: 'private', amount: 10_000, expired_bill_at: Time.now.to_date, amount_limit: 999_999.99)
+    attr_id = id
+    Bill.create!(client_attr_id: attr_id, bills_type: 'private', amount: 10_000, expired_bill_at: Time.now.to_date, amount_limit: 999_999.99)
   end
 end

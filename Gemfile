@@ -71,3 +71,6 @@ gem 'dotenv-rails'
 gem 'recaptcha', require: 'recaptcha/rails'
 
 gem 'bootstrap'
+gem 'bootstrap-sass'
+
+gem 'jquery-rails'
