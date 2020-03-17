@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_170502) do
     t.integer "bill_id"
     t.datetime "approved_at", null: false
     t.string "approved_status", default: "", null: false
-    t.text "message", default: "", null: false
+    t.json "message", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

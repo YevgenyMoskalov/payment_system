@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'account/index'
   get 'account/new_credit' => 'account#new_credit', :as => :new_credit_modal
   get 'account/new_deposit' => 'account#new_deposit', :as => :new_deposit_modal
-
+  resources :bill_requests, only: %i[new create]
 
   devise_for :clients, controllers: { sessions: 'client/sessions', registrations: 'clients/registrations' }
   devise_for :users,   controllers: { sessions: 'users/sessions' }

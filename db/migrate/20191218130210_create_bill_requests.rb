@@ -5,7 +5,7 @@ class CreateBillRequests < ActiveRecord::Migration[5.2]
       t.integer  :bill_id
       t.datetime :approved_at,     null: false, default: ''
       t.string   :approved_status, null: false, default: ''
-      t.text     :message,         null: false, default: ''
+      t.json     :message
       t.timestamps
     end
   end
