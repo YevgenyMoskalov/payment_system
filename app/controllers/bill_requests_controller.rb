@@ -2,13 +2,13 @@ class BillRequestsController < ApplicationController
   def new; end
 
   def create
-    # params = project_params
     @request = BillRequest.new(project_params)
     @request.manager = Manager.first
-    # @request.message = params[:message]
     @request.approved_at = Time.now
     @request.approved_status = 'not confirmed'
-    @request.bill = Bill.create
+    @user = User.find(current_user.id)
+    @request.bill = Bill.create!(bills_type: "temp_type", amount: 0, percent: 0, expired_bill_at: '2000-01-01', amount_limit: 1000000,
+                                 regular_replenishment_amount: 0, client_attr_id: @user.client_attr.id)
     @request.save!
     redirect_to root_path
   end
